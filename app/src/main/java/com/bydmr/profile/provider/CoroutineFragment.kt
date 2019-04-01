@@ -1,4 +1,4 @@
-package com.bydmr.profile.ui.provider
+package com.bydmr.profile.provider
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

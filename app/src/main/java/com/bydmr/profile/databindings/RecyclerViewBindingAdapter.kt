@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bydmr.profile.data.network.response.followers.FollowersResponse
 import com.bydmr.profile.data.network.response.movies.MoviesResponse
-import com.bydmr.profile.ui.profile.MoviesRecyclerAdapter
-import com.bydmr.profile.ui.profile.ProfileFragmentAdapter
+import com.bydmr.profile.ui.profile.adapter.MoviesRecyclerAdapter
+import com.bydmr.profile.ui.profile.adapter.FollowersRecyclerAdapter
 
-object FollowersRecyclerViewBindingAdapter {
+object RecyclerViewBindingAdapter {
 
     @JvmStatic
     @BindingAdapter("setFollowers")
@@ -22,7 +22,7 @@ object FollowersRecyclerViewBindingAdapter {
         if (recyclerView.layoutManager == null)
             recyclerView.layoutManager = layoutManager
 
-        val adapter = ProfileFragmentAdapter(followers)
+        val adapter = FollowersRecyclerAdapter(followers)
         if (recyclerView.adapter == null)
             recyclerView.adapter = adapter
     }

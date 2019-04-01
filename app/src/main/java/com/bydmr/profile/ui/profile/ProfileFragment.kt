@@ -7,12 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.GridLayoutManager
 
-import com.bydmr.profile.R
 import com.bydmr.profile.databinding.ProfileFragmentBinding
-import com.bydmr.profile.ui.provider.CoroutineFragment
-import kotlinx.android.synthetic.main.profile_fragment.*
+import com.bydmr.profile.provider.CoroutineFragment
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein

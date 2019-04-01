@@ -1,4 +1,4 @@
-package com.bydmr.profile.ui.profile
+package com.bydmr.profile.ui.profile.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,9 +7,9 @@ import com.bydmr.profile.data.network.response.followers.FollowersResponse
 import com.bydmr.profile.databinding.ItemFollowersBinding
 
 
-class ProfileFragmentAdapter(
+class FollowersRecyclerAdapter(
         val followers: FollowersResponse
-): RecyclerView.Adapter<ProfileFragmentAdapter.Holder>() {
+): RecyclerView.Adapter<FollowersRecyclerAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemFollowersBinding.inflate(LayoutInflater.from(parent.context), parent, false)

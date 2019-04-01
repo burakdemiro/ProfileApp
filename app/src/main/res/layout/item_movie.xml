@@ -66,6 +66,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/thumb_up"
                 app:layout_constraintTop_toTopOf="@+id/thumb_up"
                 android:textStyle="bold"
+                android:text="@{String.valueOf(moviesInfo.likeCount)}"
                 tools:text="5"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

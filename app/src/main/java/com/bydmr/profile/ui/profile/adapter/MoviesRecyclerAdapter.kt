@@ -1,4 +1,4 @@
-package com.bydmr.profile.ui.profile
+package com.bydmr.profile.ui.profile.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
