@@ -22,7 +22,7 @@
 
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline35"
+            android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -33,12 +33,12 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toTopOf="@+id/guideline35"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:setImageWithGlide="@{memberInfo.profileBackgroundPictureUrl}"
-            tools:src="@color/colorAccent" />
+            tools:src="@color/colorPrimary" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -57,15 +57,29 @@
             app:setImageWithGlide="@{memberInfo.profilePictureUrl}"
             tools:src="@tools:sample/avatars[3]" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_follower"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="32dp"
-            app:setFollowers="@{followers}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline35" />
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/profile_image"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@android:color/white"
+            android:text="@{memberInfo.username}"
+            tools:text="Name Surname" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@+id/background_image"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/textView"
@@ -73,25 +87,31 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Followers"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView_follower"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/background_image" />
+            app:layout_constraintTop_toBottomOf="@+id/background_image"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Followers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_follower"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:setFollowers="@{followers}" />
 
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@{memberInfo.username}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="@+id/profile_image"
-            app:layout_constraintStart_toStartOf="@+id/profile_image"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image"
-            tools:text="Name Surname" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_follower"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Popular       Recent"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_movies"
@@ -100,7 +120,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView_follower"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:setMovies="@{movies}" />
 
 

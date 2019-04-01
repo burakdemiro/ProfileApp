@@ -20,7 +20,6 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/movie_picture"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
@@ -29,34 +28,37 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:setImageWithGlide="@{moviesInfo.profilePictureUrl}"
-                tools:srcCompat="@tools:sample/avatars[12]" />
+                tools:srcCompat="@tools:sample/avatars[15]" />
 
             <TextView
                 android:id="@+id/movie_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
+                android:text="@{moviesInfo.name}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                 android:textColor="@android:color/white"
+                android:textSize="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:textSize="8dp"
-                android:text="@{moviesInfo.name}"
-                tools:text="Baba"/>
+                tools:text="Baba" />
 
             <ImageView
                 android:id="@+id/thumb_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/ic_thumb_up" />
+                app:layout_constraintWidth_percent=".25"
+                app:srcCompat="@drawable/ic_thumb_up"
+                android:tint="@android:color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +67,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/thumb_up"
                 app:layout_constraintEnd_toStartOf="@+id/thumb_up"
                 app:layout_constraintTop_toTopOf="@+id/thumb_up"
-                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@android:color/white"
                 android:text="@{String.valueOf(moviesInfo.likeCount)}"
                 tools:text="5"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
